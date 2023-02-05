@@ -32,7 +32,15 @@ class MyAdapter(private val Player:ArrayList<ModelC>, private val context:Contex
 
         holder.card.setOnClickListener{
             val intent=Intent(context,Detail::class.java)
-            intent.putExtra("model",currentItem)
+            intent.putExtra("titleImage",currentItem.titleImage)
+//            intent.putExtra("Name",currentItem.Name)
+//            intent.putExtra("Born",currentItem.Born)
+//            intent.putExtra("Age",currentItem.Age)
+//            intent.putExtra("Teams",currentItem.Teams)
+//            intent.putExtra("Nickname",currentItem.Nickname)
+//            intent.putExtra("BatStyle",currentItem.BatStyle)
+//            intent.putExtra("BowlStyle",currentItem.BowlStyle)
+            intent.putExtra("Model",currentItem)
             context.startActivity(intent)
 
         }
