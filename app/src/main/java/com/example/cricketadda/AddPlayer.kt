@@ -24,6 +24,9 @@ class AddPlayer : AppCompatActivity() {
     private fun addPlayer(){
         with(binding){
             model= ModelC()
+
+            Log.d("nkmodel1",model.toString())
+
             model.Name=playerName.text.toString()
             model.titleImage=R.drawable.img
             model.Age=age.text.toString()
@@ -32,7 +35,12 @@ class AddPlayer : AppCompatActivity() {
             model.Nickname=nickname.text.toString()
             model.BatStyle=batStyle.text.toString()
             model.BowlStyle=Bowl.text.toString()
+
+            Log.d("nkmodel2",model.toString())
+            //firebase
+
             dataBase= FirebaseFirestore.getInstance()
+
             dataBase.collection("CricketAdda").document().set(model).addOnSuccessListener {
                 Toast.makeText(this@AddPlayer,"Successfully Add",Toast.LENGTH_SHORT).show()
             }.addOnFailureListener{
