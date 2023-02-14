@@ -26,6 +26,7 @@ class AddPlayer : AppCompatActivity() {
             model= ModelC()
             model.Name=playerName.text.toString()
             model.titleImage=R.drawable.img
+            model.Age=age.text.toString()
             model.Born=DOB.text.toString()
             model.Teams=team.text.toString()
             model.Nickname=nickname.text.toString()
