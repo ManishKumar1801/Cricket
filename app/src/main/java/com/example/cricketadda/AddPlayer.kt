@@ -39,8 +39,8 @@ class AddPlayer : AppCompatActivity() {
             model.BowlStyle=bowl.text.toString()
 
             Log.d("nkmodel3",model.toString())
-            //firebase
 
+            //firebase
             dataBase= FirebaseFirestore.getInstance()
 
             dataBase.collection("CricketAdda").document().set(model).addOnSuccessListener {

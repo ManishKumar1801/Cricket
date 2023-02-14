@@ -34,13 +34,13 @@ class Detail : AppCompatActivity() {
 //            BatStyle.text=batstyle
 //            BowlStyle.text=bowlstyle
 
-            PlayerName.text=model.Name
-            DateOfB.text=model.Born
-            Age.text=model.Age
-            Teams.text=model.Teams
-            NickName.text=model.Nickname
-            BatStyle.text=model.BatStyle
-            BowlStyle.text=model.BowlStyle
+            playerName.text=model.Name
+            dob.text=model.Born
+            age.text=model.Age
+            teamName.text=model.Teams
+            nickName.text=model.Nickname
+            batStyle.text=model.BatStyle
+            ballStyle.text=model.BowlStyle
 
         }
     }
