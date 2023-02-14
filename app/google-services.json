@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "795893510169",
+    "project_id": "cricketadda-49efb",
+    "storage_bucket": "cricketadda-49efb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795893510169:android:cba71ffd8a2acff925ba88",
+        "android_client_info": {
+          "package_name": "com.example.cricketadda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795893510169-79q95macvn72n3n8qlp1ll6ni2r54utb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv2C_ympU7QsLWH233kfzR0bR1_B73B-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795893510169-79q95macvn72n3n8qlp1ll6ni2r54utb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
