@@ -27,16 +27,16 @@ class AddPlayer : AppCompatActivity() {
 
             Log.d("nkmodel1",model.toString())
 
-            model.Name=playerName.text.toString()
+            model.Name=playername.text.toString()
             Log.d("nkmodel1",model.Name.toString())
             model.titleImage=R.drawable.img
             model.Age=age.text.toString()
             Log.d("nkmodel2",model.toString())
-            model.Born=DOB.text.toString()
-            model.Teams=team.text.toString()
-            model.Nickname=nickname.text.toString()
+            model.Born=dateofbirth.text.toString()
+            model.Teams=teamname.text.toString()
+            model.Nickname=Nick.text.toString()
             model.BatStyle=batStyle.text.toString()
-            model.BowlStyle=Bowl.text.toString()
+            model.BowlStyle=bowl.text.toString()
 
             Log.d("nkmodel3",model.toString())
             //firebase

@@ -11,7 +11,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var dataBase: FirebaseFirestore
     private lateinit var binding: ActivityMainBinding
     private lateinit var newArrayList:ArrayList<ModelC>
     private lateinit var mAdapter: MyAdapter
@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
                 val intent= Intent(this@MainActivity,AddPlayer::class.java)
                 startActivity(intent)
             }
-            newArrayList=ArrayList()
-            Log.d("nklist1",newArrayList.toString())
+//            newArrayList=ArrayList()
+//            Log.d("nklist1",newArrayList.toString())
 //            newArrayList.add(ModelC(R.drawable.img,"Virat Kohali","13/07/1998","34","India U19,India,Rcb","Cicku","Right Handed Bat","Right-arm medium"))
 //            newArrayList.add(ModelC(R.drawable.img,"Virat Kohali","13/07/1998","34","India U19,India,Rcb","Cicku","Right Handed Bat","Right-arm medium"))
 //            newArrayList.add(ModelC(R.drawable.img,"Virat Kohali","13/07/1998","34","India U19,India,Rcb","Cicku","Right Handed Bat","Right-arm medium"))
@@ -40,13 +40,42 @@ class MainActivity : AppCompatActivity() {
 //            newArrayList.add(ModelC(R.drawable.img,"Virat Kohali","13/07/1998","34","India U19,India,Rcb","Cicku","Right Handed Bat","Right-arm medium"))
 //            newArrayList.add(ModelC(R.drawable.img,"Virat Kohali","13/07/1998","34","India U19,India,Rcb","Cicku","Right Handed Bat","Right-arm medium"))
 //            newArrayList.add(ModelC(R.drawable.img,"Virat Kohali","13/07/1998","34","India U19,India,Rcb","Cicku","Right Handed Bat","Right-arm medium"))
-            Log.d("nklist2",newArrayList.toString())
-            mAdapter= MyAdapter(newArrayList,this@MainActivity)
+//            Log.d("nklist2",newArrayList.toString())
+//            mAdapter= MyAdapter(newArrayList,this@MainActivity)
+//
+//            recyclerview.adapter=mAdapter
+//            recyclerview.layoutManager=LinearLayoutManager(this@MainActivity)
 
-            recyclerview.adapter=mAdapter
-            recyclerview.layoutManager=LinearLayoutManager(this@MainActivity)
 
+        }
+    }
 
+    override fun onResume() {
+        super.onResume()
+        buildRecycler()
+    }
+    private fun buildRecycler(){
+        Log.d("enter", "Enter")
+        with(binding){
+            newArrayList= ArrayList()
+            var model= ModelC()
+            dataBase=FirebaseFirestore.getInstance()
+            dataBase.collection("CricketAdda").get().addOnSuccessListener {
+                if(!it.isEmpty){
+                   for (d in it){
+                       model=d.toObject(ModelC::class.java)
+                       newArrayList.add(model)
+                       Log.d("LIST",newArrayList.toString())
+                   }
+                }
+                mAdapter= MyAdapter(newArrayList,this@MainActivity)
+
+                recyclerview.adapter=mAdapter
+                recyclerview.layoutManager=LinearLayoutManager(this@MainActivity)
+
+            }.addOnFailureListener{
+
+            }
         }
     }
 }
